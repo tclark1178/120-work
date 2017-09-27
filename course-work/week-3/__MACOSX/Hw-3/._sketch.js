@@ -13,6 +13,9 @@ function setup() {
    function draw() {
    //now for my text function of "hello world" that will be 40 by 60
 
-   text('hello world!, 40, 60');
+   text('hello world!', 40, 60);
 
 }
+
+
+// new comment
