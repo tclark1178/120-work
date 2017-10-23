@@ -54,7 +54,7 @@ function draw() {
   triangle( mouseX, mouseY, 100,100,100,20,20,20 );
   pop();
 
-  
+    
   angle = angle + 45;
 
 }
