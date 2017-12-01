@@ -1,44 +1,47 @@
-
-moz.ball;
-
+//create 3 var
+let ball; //will be red
+let ball2; //will be blue
+let ball3; //will be white
 function setup() {
     createCanvas(windowWidth, windowHeight);
-
-    // create a new ball object of class type "Ball"
-    ball = new Ball(width / 2, height / 2, 50, 'red');
+//change the ball object with + height
+    ball = new XXYZ(width / 6, height / 6, 65, 'red');
+    ball2 = new XXYZ(width / 4, height / 4, 55, 'blue');
+    ball3 = new XXYZ(width / 2, height / 2, 22, 'white');
 }
-
+//createCanvas black to see the white ball3
 function draw() {
     background(0);
 
-    // call the ball's methods
     ball.display();
-    ball.move();
+    ball2.display();
+    ball3.display();
+    ball.move('40');
+    ball2.move('40');
+    ball3.move('40');
     ball.edgeCheck();
+    ball2.edgeCheck();
+    ball3.edgeCheck();
 }
 
-
-
-moz.Ball;{
+class XXYZ {
     constructor(x, y, size, color) {
         this.color = color;
         this.size = size;
         this.rad = this.size / 2;
         this.posX = x;
         this.posY = y;
-        this.deltaX = random(-2, 2);
-        this.deltaY = random(-2, 2);
+        this.deltaX = random(-20, 50);
+        this.deltaY = random(-20, 50);
+        //change the speed of the ball with x = -20, 50 and y = -20, 50
     }
 
     display() {
         push();
-        // remove the balls outer stroke
         noStroke();
-        // set the balls fill color
         fill(this.color);
-        // set the position of the ball
         translate(this.posX, this.posY);
-        ellipse(0, 0, this.size);
+        ellipse(4, 4, this.size);
         pop();
     }
 
@@ -48,11 +51,9 @@ moz.Ball;{
     }
 
     edgeCheck() {
-        // check if the ball has hit a vertical wall (left or right walls)
         if (this.posX + this.rad >= width || this.posX - this.rad <= 0) {
             this.deltaX *= -1;
         }
-        // check if the ball has hit a horizontal wall (top or bottom walls)
         if (this.posY + this.rad >= height || this.posY - this.rad <= 0) {
             this.deltaY *= -1;
         }
