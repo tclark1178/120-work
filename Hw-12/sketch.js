@@ -26,7 +26,7 @@ function draw() {
         balls[i].display();
     }
 }
-//creat the ball class
+//creat the ball class 
 class Ball {
     constructor(x, y, size) {
         this.color1 = 'red';
